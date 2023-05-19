@@ -63,11 +63,12 @@ const Mountains = styled.img`
 
 const Paralax = () => {
 
-  const starsRef = useRef();
+  const titleRef = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("scroll")
+      titleRef.current.style.color = 'white';
+      console.log("scroll");
     };
 
     const scrollListener = () => {
@@ -86,7 +87,7 @@ const Paralax = () => {
       <Stars src="src/assets/stars.png" />
       <Moon src="src/assets/moon.png" />
       <Mountain src="src/assets/mountains_behind.png" />
-      <Title>Moon Light</Title>
+      <Title ref={titleRef}>Moon Light</Title>
       <Explore href="#sec">Explore</Explore>
       <Mountains src="src/assets/mountains_front.png" />
     </Container>
